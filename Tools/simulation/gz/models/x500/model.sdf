@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sdf version="1.9">
+  <model name="x500">
+    <include merge="true">
+      <uri>model://x500_base</uri>
+    </include>
+
+    <!-- ───── MulticopterMotorModel plugins ───── -->
+    <!-- 共通パラメータを先に <plugin> ブロックで定義し，
+         joint / link / motorNumber / turningDirection だけ変える -->
+    <!-- 0 : front-right (CW) -->
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_0_joint</jointName>
+      <linkName>rotor_0</linkName>
+      <motorNumber>0</motorNumber>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2020</maxRotVelocity>
+      <rotorVelocitySlowdownSim>5</rotorVelocitySlowdownSim>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <rotorDragCoefficient>8.54858e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-07</rollingMomentCoefficient>
+      <motorType>velocity</motorType>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+    </plugin>
+
+    <!-- 1 : rear-left (CW) -->
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_1_joint</jointName>
+      <linkName>rotor_1</linkName>
+      <motorNumber>1</motorNumber>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2020</maxRotVelocity>
+      <rotorVelocitySlowdownSim>5</rotorVelocitySlowdownSim>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <rotorDragCoefficient>8.54858e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-07</rollingMomentCoefficient>
+      <motorType>velocity</motorType>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+    </plugin>
+
+    <!-- 2 : front-left (CCW) -->
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_2_joint</jointName>
+      <linkName>rotor_2</linkName>
+      <motorNumber>2</motorNumber>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2020</maxRotVelocity>
+      <rotorVelocitySlowdownSim>5</rotorVelocitySlowdownSim>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <rotorDragCoefficient>8.54858e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-07</rollingMomentCoefficient>
+      <motorType>velocity</motorType>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+    </plugin>
+
+    <!-- 3 : rear-right (CCW) -->
+    <plugin filename="gz-sim-multicopter-motor-model-system"
+            name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>rotor_3_joint</jointName>
+      <linkName>rotor_3</linkName>
+      <motorNumber>3</motorNumber>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2020</maxRotVelocity>
+      <rotorVelocitySlowdownSim>5</rotorVelocitySlowdownSim>
+      <motorConstant>8.54858e-06</motorConstant>
+      <momentConstant>0.016</momentConstant>
+      <rotorDragCoefficient>8.54858e-06</rotorDragCoefficient>
+      <rollingMomentCoefficient>1.0e-07</rollingMomentCoefficient>
+      <motorType>velocity</motorType>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+    </plugin>
+
+  </model>
+</sdf>
